@@ -56,7 +56,10 @@ class SkinLia extends SkinTemplate {
 				"/{$this->stylename}/csshover{$min}.htc\")}</style><![endif]-->"
 		);
 
-		$out->addModuleScripts( 'skins.lia', 'lia/lia.js' );
+		$out->addModuleScripts('skins.lia', 'lia/vector.js');
+		$out->addStyle('common/commonElements.css', 'screen');
+                $out->addStyle('common/commonContent.css', 'screen');
+                $out->addStyle('common/commonInterface.css', 'screen');
 		$out->addStyle('lia/screen.css', 'screen');
 	}
 
