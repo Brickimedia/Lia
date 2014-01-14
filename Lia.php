@@ -57,9 +57,6 @@ class SkinLia extends SkinTemplate {
 		);
 
 		$out->addModuleScripts( 'skins.lia', 'lia/lia.js' );
-		$out->addStyle('common/commonElements.css', 'screen');
-		$out->addStyle('common/commonContent.css', 'screen');
-		$out->addStyle('common/commonInterface.css', 'screen');
 		$out->addStyle('lia/screen.css', 'screen');
 	}
 
