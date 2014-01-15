@@ -40,18 +40,7 @@ class SkinLia extends SkinTemplate {
 	/**
 	 * Initializes output page and sets up skin-specific parameters
 	 * @param $out OutputPage object to initialize
-	 */	 
-	 $wgResourceModules['skins.lia'] = array(
-	'styles' => array(
-		'skins/common/commonElements.css' => array( 'media' => 'screen' ),
-		'skins/common/commonContent.css' => array( 'media' => 'screen' ),
-		'skins/common/commonInterface.css' => array( 'media' => 'screen' ),
-		'skins/lia/screen.css' => array( 'media' => 'screen' ),
-	),
-	'scripts' => array(
-		'skins/lia/vector.js'
-	)
-	);
+	 */
 
 	public function initPage( OutputPage $out ) {
 		global $wgLocalStylePath;
@@ -68,11 +57,11 @@ class SkinLia extends SkinTemplate {
 				"/{$this->stylename}/csshover{$min}.htc\")}</style><![endif]-->"
 		);
 
-		/*$out->addModuleScripts('skins.lia', 'lia/vector.js');
+		$out->addModuleScripts('skins.lia', 'lia/vector.js');
 		$out->addStyle('common/commonElements.css', 'screen');
                 $out->addStyle('common/commonContent.css', 'screen');
                 $out->addStyle('common/commonInterface.css', 'screen');
-		$out->addStyle('lia/screen.css', 'screen');*/
+		$out->addStyle('lia/screen.css', 'screen');
 	}
 
 	/**
