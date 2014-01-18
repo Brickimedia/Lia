@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Lia - Modified version of Vector. Skin belongs to LMBW, and is used by Brickimedia with permission.
  *
