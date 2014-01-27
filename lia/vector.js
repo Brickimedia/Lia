@@ -22,49 +22,49 @@
 
 /*Button Group Scripts - by ShermanTheMythran*/
 $(document).ready(function() {
-$('.vectorMenu').hover( function() { $('.menu ul').slideDown(); }, function() { $('.menu ul').slideUp(); } );
-$('.edit-button-group .drop').on('click', function() {
-	if ( $(this).parent('.edit-button-group').hasClass('active') ) {
-		$(this).children('.menu').slideUp('slow',function() {
-			$(this).parents('.edit-button-group').removeClass('active');
-		});
+	$('.vectorMenu').hover( function() { $('.menu ul').slideDown(); }, function() { $('.menu ul').slideUp(); } );
+	$('.edit-button-group .drop').on('click', function() {
+		if ( $(this).parent('.edit-button-group').hasClass('active') ) {
+			$(this).children('.menu').slideUp('slow',function() {
+				$(this).parents('.edit-button-group').removeClass('active');
+			});
+		}
+		else {
+			$(this).parents('.edit-button-group').addClass('active');
+			$(this).children('.menu').slideDown('slow');
+		}
+	});
+	$('.edit-button-group li').unwrap();
+	$('.edit-button-group .menu ul').remove();
+	$('#swapTabs').toggle(function() {
+		$('#right-navigation').slideUp('fast',function() {
+			$('#p-views, #p-cactions').show();
+			$('#content').css('border-top-left-radius','0px');
+			$('.navCover').css('width','100%');
+			$('#right-navigation').css('height','40px');
+			$('#p-search form').css('margin-top','0.5em');
+			$('#left-navigation, #right-navigation').slideDown('fast'); });
+		$('.edit-button-group, .button.talk').fadeOut();
+		$.cookies.set('swapTabs', 'tabs'); },
+						  function() {
+							  $('#left-navigation, #right-navigation').slideUp('fast',function() {
+								  $('#p-views, #p-cactions').hide();
+								  $('#content').css('border-top-left-radius','15px');
+								  $('.navCover').css('width','50%');
+								  $('#right-navigation').css('height','30px');
+								  $('#p-search form').css('margin-top','0.2em');
+								  $('#right-navigation').slideDown('fast'); });
+							  $('.edit-button-group, .button.talk').fadeIn();
+							  $.cookies.del('swapTabs');
+						  }
+						 );
+	$('.button.talk a').unwrap();
+	if (wgNamespaceNumber%2 === 0) {
+		$('.button.talk a[accesskey="c"], .button.talk a[accesskey="a"]').hide();
 	}
 	else {
-		$(this).parents('.edit-button-group').addClass('active');
-		$(this).children('.menu').slideDown('slow');
+		$('.button.talk a[accesskey="t"]').hide();
 	}
-});
-$('.edit-button-group li').unwrap();
-$('.edit-button-group .menu ul').remove();
-$('#swapTabs').toggle(function() {
-	$('#right-navigation').slideUp('fast',function() {
-		$('#p-views, #p-cactions').show();
-		$('#content').css('border-top-left-radius','0px');
-		$('.navCover').css('width','100%');
-		$('#right-navigation').css('height','40px');
-                $('#p-search form').css('margin-top','0.5em');
-		$('#left-navigation, #right-navigation').slideDown('fast'); });
-	$('.edit-button-group, .button.talk').fadeOut();
-	$.cookies.set('swapTabs', 'tabs'); },
-	function() {
-		$('#left-navigation, #right-navigation').slideUp('fast',function() {
-			$('#p-views, #p-cactions').hide();
-			$('#content').css('border-top-left-radius','15px');
-			$('.navCover').css('width','50%');
-			$('#right-navigation').css('height','30px');
-                        $('#p-search form').css('margin-top','0.2em');
-			$('#right-navigation').slideDown('fast'); });
-		$('.edit-button-group, .button.talk').fadeIn();
-		$.cookies.del('swapTabs');
-	}
-);
-$('.button.talk a').unwrap();
-if (wgNamespaceNumber%2 == 0) {
-	$('.button.talk a[accesskey="c"], .button.talk a[accesskey="a"]').hide();
-}
-else {
-	$('.button.talk a[accesskey="t"]').hide();
-}
 });
 $(document).ready(function() {
 	if ($.cookies.get('swapTabs') == 'tabs') {
@@ -83,14 +83,14 @@ $(document).ready(function() {
 var jaaulde = window.jaaulde || {};
 jaaulde.utils = jaaulde.utils || {};
 jaaulde.utils.cookies = ( function()
-{
-	var resolveOptions, assembleOptionsString, parseCookies, constructor, defaultOptions = {
-		expiresAt: null,
-		path: '/',
-		domain:  null,
-		secure: false
-	};
-	/**
+						 {
+							 var resolveOptions, assembleOptionsString, parseCookies, constructor, defaultOptions = {
+								 expiresAt: null,
+								 path: '/',
+								 domain:  null,
+								 secure: false
+							 };
+							 /**
 	* resolveOptions - receive an options object and ensure all options are present and valid, replacing with defaults where necessary
 	*
 	* @access private
@@ -101,7 +101,7 @@ jaaulde.utils.cookies = ( function()
 	resolveOptions = function( options )
 	{
 		var returnValue, expireDate;
-
+		
 		if( typeof options !== 'object' || options === null )
 		{
 			returnValue = defaultOptions;
@@ -114,7 +114,7 @@ jaaulde.utils.cookies = ( function()
 				domain: defaultOptions.domain,
 				secure: defaultOptions.secure
 			};
-
+			
 			if( typeof options.expiresAt === 'object' && options.expiresAt instanceof Date )
 			{
 				returnValue.expiresAt = options.expiresAt;
@@ -125,25 +125,25 @@ jaaulde.utils.cookies = ( function()
 				expireDate.setTime( expireDate.getTime() + ( options.hoursToLive * 60 * 60 * 1000 ) );
 				returnValue.expiresAt = expireDate;
 			}
-
+			
 			if( typeof options.path === 'string' && options.path !== '' )
 			{
 				returnValue.path = options.path;
 			}
-
+			
 			if( typeof options.domain === 'string' && options.domain !== '' )
 			{
 				returnValue.domain = options.domain;
 			}
-
+			
 			if( options.secure === true )
 			{
 				returnValue.secure = options.secure;
 			}
 		}
-
+		
 		return returnValue;
-		};
+	};
 	/**
 	* assembleOptionsString - analyze options and assemble appropriate string for setting a cookie with those options
 	*
@@ -155,7 +155,7 @@ jaaulde.utils.cookies = ( function()
 	assembleOptionsString = function( options )
 	{
 		options = resolveOptions( options );
-
+		
 		return (
 			( typeof options.expiresAt === 'object' && options.expiresAt instanceof Date ? '; expires=' + options.expiresAt.toGMTString() : '' ) +
 			'; path=' + options.path +
@@ -177,7 +177,7 @@ jaaulde.utils.cookies = ( function()
 		{
 			pair = separated[i].split( '=' );
 			name = pair[0].replace( /^\s*/, '' ).replace( /\s*$/, '' );
-
+			
 			try
 			{
 				value = decodeURIComponent( pair[1] );
@@ -186,7 +186,7 @@ jaaulde.utils.cookies = ( function()
 			{
 				value = pair[1];
 			}
-
+			
 			if( typeof JSON === 'object' && JSON !== null && typeof JSON.parse === 'function' )
 			{
 				try
@@ -199,14 +199,14 @@ jaaulde.utils.cookies = ( function()
 					value = unparsedValue;
 				}
 			}
-
+			
 			cookies[name] = value;
 		}
 		return cookies;
 	};
-
+	
 	constructor = function(){};
-
+	
 	/**
 	 * get - get one, several, or all cookies
 	 *
@@ -217,7 +217,7 @@ jaaulde.utils.cookies = ( function()
 	constructor.prototype.get = function( cookieName )
 	{
 		var returnValue, item, cookies = parseCookies();
-
+		
 		if( typeof cookieName === 'string' )
 		{
 			returnValue = ( typeof cookies[cookieName] !== 'undefined' ) ? cookies[cookieName] : null;
@@ -241,7 +241,7 @@ jaaulde.utils.cookies = ( function()
 		{
 			returnValue = cookies;
 		}
-
+		
 		return returnValue;
 	};
 	/**
@@ -254,12 +254,12 @@ jaaulde.utils.cookies = ( function()
 	constructor.prototype.filter = function( cookieNameRegExp )
 	{
 		var cookieName, returnValue = {}, cookies = parseCookies();
-
+		
 		if( typeof cookieNameRegExp === 'string' )
 		{
 			cookieNameRegExp = new RegExp( cookieNameRegExp );
 		}
-
+		
 		for( cookieName in cookies )
 		{
 			if( cookieName.match( cookieNameRegExp ) )
@@ -267,7 +267,7 @@ jaaulde.utils.cookies = ( function()
 				returnValue[cookieName] = cookies[cookieName];
 			}
 		}
-
+		
 		return returnValue;
 	};
 	/**
@@ -285,13 +285,13 @@ jaaulde.utils.cookies = ( function()
 		{
 			options = {};
 		}
-
+		
 		if( typeof value === 'undefined' || value === null )
 		{
 			value = '';
 			options.hoursToLive = -8760;
 		}
-
+		
 		else if( typeof value !== 'string' )
 		{
 			if( typeof JSON === 'object' && JSON !== null && typeof JSON.stringify === 'function' )
@@ -303,10 +303,10 @@ jaaulde.utils.cookies = ( function()
 				throw new Error( 'cookies.set() received non-string value and could not serialize.' );
 			}
 		}
-
-
+		
+		
 		var optionsString = assembleOptionsString( options );
-
+		
 		document.cookie = cookieName + '=' + encodeURIComponent( value ) + optionsString;
 	};
 	/**
@@ -320,12 +320,12 @@ jaaulde.utils.cookies = ( function()
 	constructor.prototype.del = function( cookieName, options )
 	{
 		var allCookies = {}, name;
-
+		
 		if( typeof options !== 'object' || options === null )
 		{
 			options = {};
 		}
-
+		
 		if( typeof cookieName === 'boolean' && cookieName === true )
 		{
 			allCookies = this.get();
@@ -334,7 +334,7 @@ jaaulde.utils.cookies = ( function()
 		{
 			allCookies[cookieName] = true;
 		}
-
+		
 		for( name in allCookies )
 		{
 			if( typeof name === 'string' && name !== '' )
@@ -352,15 +352,15 @@ jaaulde.utils.cookies = ( function()
 	constructor.prototype.test = function()
 	{
 		var returnValue = false, testName = 'cT', testValue = 'data';
-
+		
 		this.set( testName, testValue );
-
+		
 		if( this.get( testName ) === testValue )
 		{
 			this.del( testName );
 			returnValue = true;
 		}
-
+		
 		return returnValue;
 	};
 	/**
@@ -376,23 +376,23 @@ jaaulde.utils.cookies = ( function()
 		{
 			options = null;
 		}
-
+		
 		defaultOptions = resolveOptions( options );
 	};
-
+	
 	return new constructor();
 } )();
 
 ( function()
-{
-	if( window.jQuery )
-	{
-		( function( $ )
-		{
-			$.cookies = jaaulde.utils.cookies;
-
-			var extensions = {
-				/**
+ {
+	 if( window.jQuery )
+	 {
+		 ( function( $ )
+		  {
+			  $.cookies = jaaulde.utils.cookies;
+			  
+			  var extensions = {
+				  /**
 				* $( 'selector' ).cookify - set the value of an input field, or the innerHTML of an element, to a cookie by the name or id of the field or element
 				*                           (field or element MUST have name or id attribute)
 				*
@@ -403,44 +403,44 @@ jaaulde.utils.cookies = ( function()
 				cookify: function( options )
 				{
 					return this.each( function()
-					{
-						var i, nameAttrs = ['name', 'id'], name, $this = $( this ), value;
-
-						for( i in nameAttrs )
-						{
-							if( ! isNaN( i ) )
-							{
-								name = $this.attr( nameAttrs[ i ] );
-								if( typeof name === 'string' && name !== '' )
-								{
-									if( $this.is( ':checkbox, :radio' ) )
-									{
-										if( $this.attr( 'checked' ) )
-										{
-											value = $this.val();
-										}
-									}
-									else if( $this.is( ':input' ) )
-									{
-										value = $this.val();
-									}
-									else
-									{
-										value = $this.html();
-									}
-
-									if( typeof value !== 'string' || value === '' )
-									{
-										value = null;
-									}
-
-									$.cookies.set( name, value, options );
-
-									break;
-								}
-							}
-						}
-					} );
+									 {
+										 var i, nameAttrs = ['name', 'id'], name, $this = $( this ), value;
+										 
+										 for( i in nameAttrs )
+										 {
+											 if( ! isNaN( i ) )
+											 {
+												 name = $this.attr( nameAttrs[ i ] );
+												 if( typeof name === 'string' && name !== '' )
+												 {
+													 if( $this.is( ':checkbox, :radio' ) )
+													 {
+														 if( $this.attr( 'checked' ) )
+														 {
+															 value = $this.val();
+														 }
+													 }
+													 else if( $this.is( ':input' ) )
+													 {
+														 value = $this.val();
+													 }
+													 else
+													 {
+														 value = $this.html();
+													 }
+													 
+													 if( typeof value !== 'string' || value === '' )
+													 {
+														 value = null;
+													 }
+													 
+													 $.cookies.set( name, value, options );
+													 
+													 break;
+												 }
+											 }
+										 }
+									 } );
 				},
 				/**
 				* $( 'selector' ).cookieFill - set the value of an input field or the innerHTML of an element from a cookie by the name or id of the field or element
@@ -451,48 +451,48 @@ jaaulde.utils.cookies = ( function()
 				cookieFill: function()
 				{
 					return this.each( function()
-					{
-						var n, getN, nameAttrs = ['name', 'id'], name, $this = $( this ), value;
-
-						getN = function()
-						{
-							n = nameAttrs.pop();
-							return !! n;
-						};
-
-						while( getN() )
-						{
-							name = $this.attr( n );
-							if( typeof name === 'string' && name !== '' )
-							{
-								value = $.cookies.get( name );
-								if( value !== null )
-								{
-									if( $this.is( ':checkbox, :radio' ) )
-									{
-										if( $this.val() === value )
-										{
-											$this.attr( 'checked', 'checked' );
-										}
-										else
-										{
-											$this.removeAttr( 'checked' );
-										}
-									}
-									else if( $this.is( ':input' ) )
-									{
-										$this.val( value );
-									}
-									else
-									{
-										$this.html( value );
-									}
-								}
-								
-								break;
-							}
-						}
-					} );
+									 {
+										 var n, getN, nameAttrs = ['name', 'id'], name, $this = $( this ), value;
+										 
+										 getN = function()
+										 {
+											 n = nameAttrs.pop();
+											 return !! n;
+										 };
+										 
+										 while( getN() )
+										 {
+											 name = $this.attr( n );
+											 if( typeof name === 'string' && name !== '' )
+											 {
+												 value = $.cookies.get( name );
+												 if( value !== null )
+												 {
+													 if( $this.is( ':checkbox, :radio' ) )
+													 {
+														 if( $this.val() === value )
+														 {
+															 $this.attr( 'checked', 'checked' );
+														 }
+														 else
+														 {
+															 $this.removeAttr( 'checked' );
+														 }
+													 }
+													 else if( $this.is( ':input' ) )
+													 {
+														 $this.val( value );
+													 }
+													 else
+													 {
+														 $this.html( value );
+													 }
+												 }
+												 
+												 break;
+											 }
+										 }
+									 } );
 				},
 				/**
 				* $( 'selector' ).cookieBind - call cookie fill on matching elements, and bind their change events to cookify()
@@ -504,21 +504,21 @@ jaaulde.utils.cookies = ( function()
 				cookieBind: function( options )
 				{
 					return this.each( function()
-					{
-						var $this = $( this );
-						$this.cookieFill().change( function()
-						{
-							$this.cookify( options );
-						} );
-					} );
+									 {
+										 var $this = $( this );
+										 $this.cookieFill().change( function()
+																   {
+																	   $this.cookify( options );
+																   } );
+									 } );
 				}
 			};
-
+			
 			$.each( extensions, function( i )
-			{
-				$.fn[i] = this;
-			} );
-
+				   {
+					   $.fn[i] = this;
+				   } );
+			
 		} )( window.jQuery );
 	}
 } )();
