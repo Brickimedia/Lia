@@ -32,8 +32,6 @@ body {
 	background-image: linear-gradient(to bottom,  #f2f2f4 0%,#b2b7c4 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#cfd2da',GradientType=0 );
 	background-attachment: fixed;
-	/* @embed
-	background-image: url(images/page-base.png);*/
 }
 
 /* Content */
@@ -42,16 +40,11 @@ div#content {
 	margin-right: 1em;
 	min-height: 6.2em;
 	padding: 1em;
-	/* @embed
-	background-image: url(images/border.png);
-	background-position: top left;
-	background-repeat: repeat-y;*/
 	background-color: white;
 	color: black;
 	direction: ltr;
 	font-family: Arial;
 	box-shadow: 0 10px 20px #AAA;
-	-webkit-box-shadow: 0 10px 20px #AAA;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius:15px;
 }
@@ -65,19 +58,12 @@ div#content {
 /* Head */
 #mw-page-base {
 	height: 6em;
-	/*background-color: white;
-	@embed
-	background-image: url(images/page-fade.png);
-	background-position: bottom left;
-	background-repeat: repeat-x;*/
 }
 
 #mw-head-base {
 	margin-top: -5em;
 	margin-left: 10em;
 	height: 5em;
-	/* @embed
-	background-image: url(images/border.png);*/
 	background-position: bottom left;
 	background-repeat: repeat-x;
 }
@@ -139,8 +125,8 @@ div.emptyPortlet {
 	border-top-right-radius:10px;
 	border-top-left-radius:10px;
 }
+
 #right-navigation {
-	/*float: right;*/
 	position:absolute;
 	margin-top:3.5em;
 	margin-right: 1em;
@@ -173,11 +159,6 @@ div.vectorTabs {
 }
 
 div.vectorTabs {
-	/* @embed
-	background-image: url(images/tab-break.png);
-	background-position: bottom left;
-	background-repeat: no-repeat;
-	padding-left: 1px;*/
 	background-color:white;
 	border-top-right-radius:10px;
 	border-top-left-radius:10px;
@@ -201,44 +182,14 @@ div.vectorTabs ul li {
 	float: left;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-div.vectorTabs ul li {
-	line-height: 1.125em;
-	display: inline-block;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: #f3f3f3;
-	/* @embed
-	background-image: url(images/tab-normal-fade.png);*/
-	background-position: bottom left;
-	background-repeat: repeat-x;
-	white-space: nowrap;
-}
-
-/* IGNORED BY IE6 */
 div.vectorTabs ul > li {
 	display: block;
 }
 
 div.vectorTabs li.selected {
-	/* @embed
-	background-image: url(images/tab-current-fade.png);*/
 	background-color:white;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-div.vectorTabs li a {
-	display: inline-block;
-	height: 1.9em;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	color: #0645ad;
-	cursor: pointer;
-	font-size: 0.8em;
-}
-
-/* IGNORED BY IE6 */
 div.vectorTabs li > a {
 	display: block;
 }
@@ -248,13 +199,6 @@ div.vectorTabs li.icon a {
 	background-repeat: no-repeat;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-div.vectorTabs span a  {
-	display: inline-block;
-	padding-top: 1em;
-}
-
-/* IGNORED BY IE6 */
 /* @noflip */
 div.vectorTabs span > a {
 	float: left;
@@ -263,8 +207,6 @@ div.vectorTabs span > a {
 
 div.vectorTabs span {
 	display: inline-block;
-	/* @embed
-	background-image: url(images/tab-break.png);*/
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
@@ -277,7 +219,7 @@ div.vectorTabs li.selected a:visited{
 }
 
 div.vectorTabs li.new a,
-div.vectorTabs li.new a:visited{
+div.vectorTabs li.new a:visited {
 	/*color: #a55858;*/
 }
 
@@ -296,9 +238,7 @@ div.vectorMenu {
 	background-repeat: no-repeat;
 	cursor: pointer;
 	transition: background-image 0.3s;
-	-moz-transition: background-image 0.3s; /* Firefox 4 */
-	-webkit-transition: background-image 0.3s; /* Safari and Chrome */
-	-o-transition: background-image 0.3s; /* Opera */
+	-webkit-transition: background-image 0.3s; /* Safari */
 }
 
 div.vectorMenu:hover {
@@ -316,22 +256,6 @@ body.rtl div.vectorMenu {
 	direction: rtl;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-/* @noflip */
-div#mw-head div.vectorMenu h5 {
-	float: left;
-	/* @embed
-	background-image: url(images/tab-break.png);*/
-	background-repeat: no-repeat;
-}
-
-/* This will be flipped - unlike the one above it */
-div#mw-head div.vectorMenu h5 {
-	background-position: bottom left;
-	margin-left: -1px;
-}
-
-/* IGNORED BY IE6 */
 div#mw-head div.vectorMenu > h5 {
 	background-image: none;
 }
@@ -346,24 +270,6 @@ div#mw-head div.vectorMenu h4 {
 	border: none;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-/* @noflip */
-div.vectorMenu h5 a {
-	display: inline-block;
-	width: 24px;
-	height: 2.5em;
-	text-decoration: none;
-	/* @embed
-	background-image: url(images/tab-break.png);*/
-	background-repeat: no-repeat;
-}
-
-/* This will be flipped - unlike the one above it */
-div.vectorMenu h5 a {
-	background-position: bottom right;
-}
-
-/* IGNORED BY IE6 */
 div.vectorMenu h5 > a {
 	display: block;
 }
@@ -375,20 +281,11 @@ div.vectorMenu div.menu {
 	text-align: left;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-/* @noflip */
-body.rtl div.vectorMenu div.menu {
-	margin-left: 24px;
-}
-
-/* IGNORED BY IE6 */
 /* @noflip */
 body.rtl div.vectorMenu > div.menu {
 	margin-left: auto;
 }
 
-/* IGNORED BY IE6 */
-/* Also fixes old versions of FireFox */
 /* @noflip */
 body.rtl div.vectorMenu > div.menu,
 x:-moz-any-link {
@@ -435,17 +332,6 @@ div.vectorMenu li {
 	line-height: 1em;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-div.vectorMenu li a {
-	display: inline-block;
-	padding: 0.5em;
-	white-space: nowrap;
-	color: #0645ad;
-	cursor: pointer;
-	font-size: 0.8em;
-}
-
-/* IGNORED BY IE6 */
 div.vectorMenu li > a {
 	display: block;
 }
@@ -495,10 +381,6 @@ div#simpleSearch {
 }
 
 div#simpleSearch label {
-	/*
-	* DON'T PANIC! Browsers that won't scale this properly are the same browsers that have JS issues that prevent
-	* this from ever being shown anyways.
-	*/
 	font-size: 13px;
 	top: 0.25em;
 	direction: ltr;
@@ -533,10 +415,6 @@ div#simpleSearch input#searchInput {
 	padding-bottom: 0.2em;
 	outline: none;
 	border: none;
-	/*
-	* DON'T PANIC! Browsers that won't scale this properly are the same browsers that have JS issues that prevent
-	* this from ever being shown anyways.
-	*/
 	font-size: 13px;
 	background-color: transparent;
 	direction: ltr;
@@ -558,15 +436,6 @@ div#simpleSearch button#searchButton {
 	background-image: none;
 }
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
-div#simpleSearch button#searchButton img {
-	border: none;
-	margin: 0;
-	margin-top: -3px;
-	padding: 0;
-}
-
-/* IGNORED BY IE6 */
 div#simpleSearch button#searchButton > img {
 	margin: 0;
 }
@@ -637,8 +506,6 @@ div#footer {
 	margin-top: 0;
 	margin-right: 1em;
 	padding: 0.75em;
-	/* @embed
-	background-image: url(images/border.png);*/
 	background-position: top left;
 	background-repeat: repeat-x;
 	direction: ltr;
@@ -742,7 +609,6 @@ div#footer #footer-places li {
 	background-repeat: no-repeat;
 }
 
-/* Sadly, IE6 won't understand this */
 #preftoc li:first-child {
 	margin-left: 1px;
 }
@@ -822,9 +688,6 @@ div#footer #footer-places li {
 	margin-right: 0.25em;
 }
 
-/**
-* The following code is slightly modified from monobook
-*/
 div#content {
 	line-height: 1.5em;
 }
@@ -986,8 +849,6 @@ div#bodyContent {
 	/* This hides the text but shows the background image */
 	padding-top: 3.1em;
 	margin-top: 0;
-	/* Only applied in IE6 */
-	margin-top: -0.8em !ie;
 	height: 0;
 	overflow: hidden;
 	/* @embed */
@@ -1234,21 +1095,14 @@ body.vector-animateLayout #siteNotice {
 .edit-button-group {
 	padding: 0 !important;
 	z-index: 100;
-	-moz-transition: border-radius .3s linear;
 	-webkit-transition: border-radius .3s linear;
-	-o-transition: border-radius .3s linear;
-	-ms-transition: border-radius .3s linear;
 	transition: border-radius .3s linear;
 	;
 }
 
 .edit-button-group.active {
-	-webkit-border-radius: 10px 10px 0 0;
 	border-radius: 10px 10px 0 0;
-	-moz-transition: border-radius 0s linear;
 	-webkit-transition: border-radius 0s linear;
-	-o-transition: border-radius 0s linear;
-	-ms-transition: border-radius 0s linear;
 	transition: border-radius 0s linear;
 }
 
@@ -1256,12 +1110,10 @@ body.vector-animateLayout #siteNotice {
 	float: left;
 	padding: 0 5px 0 10px;
 	color: white;
-	-webkit-border-radius: 10px 0 0 10px;
 	border-radius: 10px 0 0 10px;
 }
 
 .edit-button-group.active .edit {
-	-webkit-border-radius: 10px 0 0 0;
 	border-radius: 10px 0 0 0;
 }
 
@@ -1269,20 +1121,17 @@ body.vector-animateLayout #siteNotice {
 	float: right;
 	padding: 0 10px 0 5px;
 	font-size: 10px;
-	-webkit-border-radius: 0 10px 10px 0;
 	border-radius: 0 10px 10px 0;
 	cursor: pointer;
 }
 
 .edit-button-group.active .drop {
-	-webkit-border-radius: 0 10px 0 0;
 	border-radius: 0 10px 0 0;
 
 }
 
 .edit-button-group .menu  {
 	position: absolute;
-	-webkit-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
 	background: #ffa726;
 	margin: 0;
@@ -1301,10 +1150,7 @@ body.vector-animateLayout #siteNotice {
 	display: inline-block;
 	padding: 7px 11px;
 	width: 3.9em;
-	-moz-transition: background .3s linear;
 	-webkit-transition: background .3s linear;
-	-o-transition: background .3s linear;
-	-ms-transition: background .3s linear;
 	transition: background .3s linear;
 
 }
@@ -1315,7 +1161,6 @@ body.vector-animateLayout #siteNotice {
 }
 
 .edit-button-group .menu li:last-child a {
-	-webkit-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
 }
 
@@ -1338,87 +1183,6 @@ body.vector-animateLayout #siteNotice {
 	text-decoration: none !important;
 }
 
-/*Recent Changes Modifications - By ShermanTheMythran*/
-/*.mw-line {
-list-style: none;
-margin: 0;
-padding: 1em 1em 1em 0;
-border-bottom: 1px solid lightGrey;
-}
-
-.mw-line::before {
-content: "";
-background-image: url('http://meta.brickimedia.org/images/meta/4/4c/Sprites.png');
-background-repeat: no-repeat;
-position: absolute;
-width: 16px;
-height: 16px;
-margin: 2px 0 0 -20px;
-}
-
-.mw-line:last-child {
-border-bottom: none;
-}
-
-.mw-line .mw-title {
-font-size: 1.4em;
-}
-
-.mw-line .mw-actions a {
-margin: 0 0.5em;
-}
-
-.mw-line .mw-changeslist-date {
-float: right;
-}
-
-.mw-line .mw-userlink::before {
-content: "by:";
-color: lightgray;
-font-style: italic;
-margin-right: 0.5em;
-}
-
-.mw-line .mw-section::before {
-content: "edited section:";
-color: lightgray;
-font-style: italic;
-margin-right: 0.5em;
-}
-
-.mw-line .mw-comment::before {
-content: "comment:";
-color: lightgray;
-font-style: italic;
-margin-right: 0.5em;
-}
-
-.mw-line .mw-usertoollinks {
-margin-left: 0.5em;
-text-transform: lowercase;
-}
-
-.mw-line .mw-plusminus-pos, .mw-line .mw-plusminus-neg, .mw-line .mw-plusminus-null {
-float: right;
-font-size: 80%;
-}
-
-.mw-line.edit::before {
-background-position: 0 -16px;
-}
-
-.mw-line.edit.new::before {
-background-position: -16px 0;
-}
-
-.mw-line.edit.minor::before {
-background-position: -16px -16px;
-}
-
-.mw-line.log::before {
-background-position: -32px -32px;
-}*/
-
 /* CSS placed here will affect users of the Lia skin - Temporairly placed here until Lia.css is created. */
 
 #p-navigation {
@@ -1427,15 +1191,10 @@ background-position: -32px -32px;
 
 .portal {
 	background-color: #fdfdfd !important;
-	background-image: -moz-linear-gradient(top,  #fdfdfd 0%, #cfd2da 100%) !important;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#cfd2da)) !important;
 	background-image: -webkit-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%) !important;
-	background-image: -o-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%) !important;
-	background-image: -ms-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%) !important;
 	background-image: linear-gradient(to bottom,  #fdfdfd 0%,#cfd2da 100%) !important;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#cfd2da',GradientType=0 );
 	border-radius: 15px;
-	-webkit-border-radius: 15px;
 	border: 2px solid #91aacf !important;
 	padding-top:5px;
 	padding-right:5px;
@@ -1480,14 +1239,9 @@ color:#C0C0C0;
 	outline: none;
 	border: 1px solid #C9C9C9;
 	background-color: #fdfdfd;
-	background-image: -moz-linear-gradient(top,  #fdfdfd 0%, #cfd2da 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#cfd2da));
 	background-image: -webkit-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%);
-	background-image: -o-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%);
-	background-image: -ms-linear-gradient(top,  #fdfdfd 0%,#cfd2da 100%);
 	background-image: linear-gradient(to bottom,  #fdfdfd 0%,#cfd2da 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#cfd2da',GradientType=0 );
-	-webkit-border-radius: 15px;
 	-webkit-appearance: none;
 	border-radius: 15px;
 
@@ -1495,11 +1249,11 @@ color:#C0C0C0;
 
 #p-search input:focus {
 	background: white;
-	-webkit-box-shadow: inset 2px 2px 7px #C9C9C9;
 	box-shadow: inset 2px 2px 7px #C9C9C9;
 }
 
-/*#searchGoButton,*/ #mw-searchButton {
+/*#searchGoButton,*/ 
+#mw-searchButton {
 	display:none;
 }
 
@@ -1513,7 +1267,6 @@ color:#C0C0C0;
 }
 
 #searchInput, #searchform {
-	/*border:1px solid grey;*/
 	border-radius:10px;
 }
 
@@ -1541,7 +1294,6 @@ a.button talk {
 	z-index: 1;
 }
 
-/* Merged from Button.css */
 .p-namespaces li {
 	background-color:#ffa827;
 }
@@ -1558,7 +1310,6 @@ a.button talk {
 	display: none;
 }
 
-/* Merged from Tabs.css*/
 #right-navigation li:first-child, #left-navigation li:first-child {
 	border-top-left-radius:10px;
 }
@@ -1569,10 +1320,7 @@ a.button talk {
 
 #left-navigation li, #right-navigation li {
 	background-color:#f3f3f3;
-	-moz-transition: background-color 0.5s;
 	-webkit-transition: background-color 0.5s;
-	-o-transition: background-color 0.5s;
-	-ms-transition: background-color 0.5s;
 	transition: background-color 0.5s;
 
 }
@@ -1596,13 +1344,11 @@ a.button talk {
 	position:aboslute;
 	bottom:0px;
 	right:0;
-	-webkit-box-shadow: 0 2px 20px #AAA;
 	box-shadow: 0 2px 20px #AAA;
 }
 
 #left-navigation {
 	bottom:0px;
-	-webkit-box-shadow: 0 2px 20px #AAA;
 	box-shadow: 0 2px 20px #AAA;
 }
 
@@ -1630,10 +1376,7 @@ a.button talk {
 .vectorMenu .menu li {
 	padding: 5px;
 	background: white !important;
-	-moz-transition: background .3s linear;
 	-webkit-transition: background .3s linear;
-	-o-transition: background .3s linear;
-	-ms-transition: background .3s linear;
 	transition: background .3s linear;
 }
 
