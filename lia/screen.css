@@ -145,6 +145,10 @@ div.emptyPortlet {
 	border-top-left-radius:10px;
 }
 
+#ca-watch {
+display: none;
+}
+
 /* Navigation Labels */
 div.vectorTabs h5,
 div.vectorMenu h5 span {
